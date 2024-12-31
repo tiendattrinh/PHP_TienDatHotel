@@ -390,6 +390,220 @@ body {
 
 /* END IMAGE GALLERY */
 
+/* START WELCOME */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 50px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    max-width: 50%;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more {
+    background-color: #ffa726;
+    color: #fff;
+}
+
+.learn-more:hover {
+    background-color: #fb8c00;
+}
+
+.see-video {
+    color: #ffa726;
+}
+
+.see-video:hover {
+    text-decoration: underline;
+}
+
+.images {
+    position: relative;
+}
+
+.main-image {
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.profile-image {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .welcome-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .images {
+        margin-top: 20px;
+    }
+
+    .main-image {
+        max-width: 100%;
+    }
+
+    .profile-image {
+        bottom: -10px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* END WELCOME */
+
+
+/* START BOOK ROOM */
+.hotel-rooms {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.rooms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.room {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.room:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.room-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.room-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.room-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.room-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .room-title {
+        font-size: 1.2rem;
+    }
+
+    .room-description {
+        font-size: 0.9rem;
+    }
+
+    .room-price {
+        font-size: 1rem;
+    }
+
+    .room-image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .room-title {
+        font-size: 1rem;
+    }
+
+    .room-description {
+        font-size: 0.8rem;
+    }
+
+    .room-price {
+        font-size: 0.9rem;
+    }
+
+    .room-image {
+        height: 320px;
+    }
+}
+
+/* END BOOK ROOM */
 
 /* START CONTACT */
 .contact-us {

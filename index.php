@@ -129,6 +129,70 @@
     </div>
     <!-- End Gallery -->
 
+    <!-- Welcome -->
+    <section class="welcome-section">
+        <div class="content">
+            <h1>Welcome!</h1>
+            <p>This is the place I call my passion, where I dedicate my heart and soul to creating memorable
+                experiences, and I hope you will call it home, a place that is modern, comfortable, and filled with
+                luxury.</p>
+            <div class="buttons">
+                <a href="#" class="btn learn-more">Learn More</a>
+                <span>or</span>
+                <a href="#" class="btn see-video">SEE VIDEO</a>
+            </div>
+        </div>
+        <div class="images">
+            <img src="images/n7.jpg" alt="Room" class="main-image">
+            <img src="images/avt.png" alt="Person" class="profile-image">
+        </div>
+    </section>
+
+    <!-- Book rooms -->
+    <section class="hotel-rooms">
+        <h1 class="section-title">Available Rooms</h1>
+        <div class="rooms-container">
+            <!-- Room 1 -->
+            <div class="room">
+                <img src="images/room1.jpg" alt="Room 1" class="room-image">
+                <div class="room-details">
+                    <h2 class="room-title">Deluxe Room</h2>
+                    <p class="room-description">A luxurious room with a king-size bed, ensuite bathroom, and stunning
+                        city views.</p>
+                    <p class="room-price">$150 per night</p>
+                </div>
+            </div>
+            <!-- Room 2 -->
+            <div class="room">
+                <img src="images/room2.png" alt="Room 2" class="room-image">
+                <div class="room-details">
+                    <h2 class="room-title">Standard Room</h2>
+                    <p class="room-description">Comfortable room with a queen-size bed and modern amenities.</p>
+                    <p class="room-price">$100 per night</p>
+                </div>
+            </div>
+            <!-- Room 3 -->
+            <div class="room">
+                <img src="images/room4.jpg" alt="Room 3" class="room-image">
+                <div class="room-details">
+                    <h2 class="room-title">Family Room</h2>
+                    <p class="room-description">Spacious room with two queen-size beds, perfect for families.</p>
+                    <p class="room-price">$200 per night</p>
+                </div>
+            </div>
+            <!-- Room 4 -->
+            <div class="room">
+                <img src="images/room3.jpg" alt="Room 4" class="room-image">
+                <div class="room-details">
+                    <h2 class="room-title">Suite</h2>
+                    <p class="room-description">A premium suite with a living area, kitchenette, and exclusive services.
+                    </p>
+                    <p class="room-price">$300 per night</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section class="contact-us">
         <div class="contact-form">
