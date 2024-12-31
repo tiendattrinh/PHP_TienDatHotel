@@ -96,6 +96,24 @@
             <div class="gallery-item" data-info="Room 6">
                 <img src="images/n6.jpg" alt="Room 6">
             </div>
+            <div class="gallery-item" data-info="Room 1">
+                <img src="images/n7.jpg" alt="Room 1">
+            </div>
+            <div class="gallery-item" data-info="Room 2">
+                <img src="images/n8.jpg" alt="Room 2">
+            </div>
+            <div class="gallery-item" data-info="Room 3">
+                <img src="images/n9.jpg" alt="Room 3">
+            </div>
+            <div class="gallery-item" data-info="Room 4">
+                <img src="images/n10.png" alt="Room 4">
+            </div>
+            <div class="gallery-item" data-info="Room 5">
+                <img src="images/n11.jpg" alt="Room 5">
+            </div>
+            <div class="gallery-item" data-info="Room 6">
+                <img src="images/n12.jpeg" alt="Room 6">
+            </div>
         </div>
     </div>
 
@@ -109,6 +127,7 @@
         <button class="prev-btn">&#10094;</button>
         <button class="next-btn">&#10095;</button>
     </div>
+    <!-- End Gallery -->
 
     <!-- Contact -->
     <section class="contact-us">
@@ -232,9 +251,8 @@
         });
     </script>
 
+    <!-- script gallery-->
     <script src="js/gallery.js"></script>
-    <!-- script chua dung-->
-    <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>
