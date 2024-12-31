@@ -74,6 +74,43 @@
         </div>
     </section>
 
+    <!-- Contact -->
+    <section class="contact-us">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <p>If you need further assistance, please leave a message, we will respond to you immediately.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group-message">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+                </div>
+            </form>
+        </div>
+
+        <div class="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4676291827705!2d106.70130297355188!3d10.775451359214731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4407b01b09%3A0x760e827116eeffe1!2zQuG6v24gQuG6oWNoIMSQ4bqxbmc!5e0!3m2!1svi!2s!4v1735635467003!5m2!1svi!2s"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <button type="submit" form="contactForm" class="submit-btn">Send Message</button>
+        </div>
+    </section>
+
+
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="testimonials-container">
@@ -82,7 +119,7 @@
                 <div class="testimonial-card">
                     <p class="testimonial-text">"The service was outstanding, and the room was so cozy !!"</p>
                     <div class="testimonial-author">
-                        <img src="images/person1" alt="Customer 1">
+                        <img src="images/person1.jpg" alt="Customer 1">
                         <div class="author-details">
                             <span>Erik Muskap</span>
                             <p>★ ★ ★ ★ ★</p>
@@ -92,7 +129,7 @@
                 <div class="testimonial-card">
                     <p class="testimonial-text">"I loved the pool and the dining experience. Highly recommended !"</p>
                     <div class="testimonial-author">
-                        <img src="images/person2" alt="Customer 2">
+                        <img src="images/person2.jpg" alt="Customer 2">
                         <div class="author-details">
                             <span>Jane Smith</span>
                             <p>★ ★ ★ ★ ★</p>
@@ -102,7 +139,7 @@
                 <div class="testimonial-card">
                     <p class="testimonial-text">"A perfect stay with top-notch facilities and friendly staff."</p>
                     <div class="testimonial-author">
-                        <img src="images/person3" alt="Customer 3">
+                        <img src="images/person3.jpg" alt="Customer 3">
                         <div class="author-details">
                             <span>Emily Brown</span>
                             <p>★ ★ ★ ★ </p>
