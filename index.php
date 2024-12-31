@@ -74,6 +74,42 @@
         </div>
     </section>
 
+    <!-- Gallery -->
+    <div class="gallery-section">
+        <h2>GALLERY</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-info="Room 1">
+                <img src="images/n1.jpg" alt="Room 1">
+            </div>
+            <div class="gallery-item" data-info="Room 2">
+                <img src="images/n2.jpg" alt="Room 2">
+            </div>
+            <div class="gallery-item" data-info="Room 3">
+                <img src="images/n3.jpg" alt="Room 3">
+            </div>
+            <div class="gallery-item" data-info="Room 4">
+                <img src="images/n4.jpg" alt="Room 4">
+            </div>
+            <div class="gallery-item" data-info="Room 5">
+                <img src="images/n5.jpg" alt="Room 5">
+            </div>
+            <div class="gallery-item" data-info="Room 6">
+                <img src="images/n6.jpg" alt="Room 6">
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Viewer -->
+    <div class="fullscreen-viewer">
+        <span class="close-btn">&times;</span>
+        <div class="viewer-content">
+            <img id="fullscreen-image" src="" alt="Fullscreen Image">
+            <p id="image-info"></p>
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+
     <!-- Contact -->
     <section class="contact-us">
         <div class="contact-form">
@@ -195,6 +231,8 @@
             });
         });
     </script>
+
+    <script src="js/gallery.js"></script>
     <!-- script chua dung-->
     <!-- <script src="js/script.js"></script> -->
 </body>
