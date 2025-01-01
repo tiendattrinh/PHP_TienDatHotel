@@ -493,6 +493,18 @@ body {
         right: 50%;
         transform: translateX(50%);
     }
+
+    .buttons {
+        display: block;
+        /* Thêm để bật flexbox */
+        flex-direction: column;
+        /* Chuyển thành cột */
+        align-items: center;
+        /* Căn giữa nội dung */
+        gap: 10px;
+        /* Khoảng cách giữa các phần tử */
+        text-align: center;
+    }
 }
 
 /* END WELCOME */
@@ -692,6 +704,69 @@ body {
 .submit-btn:hover {
     background-color: #1E1E2C;
     color: #ffffff;
+}
+
+/* Modal style */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    /* Đây là phần quan trọng */
+}
+
+.modal-icon {
+    font-size: 50px;
+    color: green;
+}
+
+.modal-message {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Close button style (X) */
+.close-bg {
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    position: absolute;
+    /* Chuyển thành absolute */
+    top: 10px;
+    right: 10px;
+    /* Định vị góc trên bên phải */
+    cursor: pointer;
+    background-color: rgb(166, 166, 166);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    font-size: 20px;
+    color: black;
+}
+
+.close-bg:hover {
+    background-color: #FF9F1C;
 }
 
 @media (max-width: 768px) {

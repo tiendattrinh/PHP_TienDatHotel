@@ -12,19 +12,17 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <!-- Logo -->
             <div class="header-left">
                 <h1>TD HOTEL</h1>
             </div>
-
             <!-- Menu header -->
             <div class="header-right">
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">GALLERY</a></li>
-                        <li><a href="#">ROOMS</a></li>
-                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="#gallery-section">GALLERY</a></li>
+                        <li><a href="#hotel-rooms">ROOMS</a></li>
+                        <li><a href="#contact-us">CONTACT US</a></li>
                     </ul>
                 </nav>
                 <div class="menu-toggle">
@@ -75,7 +73,7 @@
     </section>
 
     <!-- Gallery -->
-    <div class="gallery-section">
+    <div id="gallery-section" class="gallery-section">
         <h2>GALLERY</h2>
         <div class="gallery-grid">
             <div class="gallery-item" data-info="Room 1">
@@ -116,7 +114,6 @@
             </div>
         </div>
     </div>
-
     <!-- Fullscreen Viewer -->
     <div class="fullscreen-viewer">
         <span class="close-btn">&times;</span>
@@ -137,9 +134,10 @@
                 experiences, and I hope you will call it home, a place that is modern, comfortable, and filled with
                 luxury.</p>
             <div class="buttons">
-                <a href="#" class="btn learn-more">Learn More</a>
+                <a href="#testimonials" class="btn learn-more">Learn More</a>
                 <span>or</span>
-                <a href="#" class="btn see-video">SEE VIDEO</a>
+                <a href="https://youtu.be/jPkBJY1KI_Q?si=tqWWLN_GJj7TgDjF" target="_blank" class="btn see-video">SEE
+                    VIDEO</a>
             </div>
         </div>
         <div class="images">
@@ -149,7 +147,7 @@
     </section>
 
     <!-- Book rooms -->
-    <section class="hotel-rooms">
+    <section id="hotel-rooms" class="hotel-rooms">
         <h1 class="section-title">Available Rooms</h1>
         <div class="rooms-container">
             <!-- Room 1 -->
@@ -194,11 +192,11 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact-us">
+    <section id="contact-us" class="contact-us">
         <div class="contact-form">
             <h2>Contact Us</h2>
             <p>If you need further assistance, please leave a message, we will respond to you immediately.</p>
-            <form id="contactForm">
+            <form id="contactForm" method="POST" action="handle/contact.php" onsubmit="return showConfirmation(event)">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -227,11 +225,22 @@
                 width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             <button type="submit" form="contactForm" class="submit-btn">Send Message</button>
         </div>
+
+        <!-- Modal notification contact -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <!-- Close button (X) -->
+                <div class="close-bg">
+                    <span class="close-btn" onclick="closeModal()">&#10006;</span>
+                </div>
+                <span class="modal-icon">&#10003;</span>
+                <div class="modal-message">Your request has been sent!</div>
+            </div>
+        </div>
     </section>
 
-
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section id="testimonials" class="testimonials">
         <div class="testimonials-container">
             <h2 class="testimonials-title">What Our Guests Say</h2>
             <div class="testimonials-grid">
@@ -286,7 +295,7 @@
             <div class="footer-center">
                 <h3>CONTACT INFORMATION</h3>
                 <p><i class="fas fa-phone"></i> Phone: +123 456 789</p>
-                <p><i class="fas fa-envelope"></i> Email: admin@gmail.com</p>
+                <p><i class="fas fa-envelope"></i> Email: tiendathotel@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> Address: 123 District 1, Ho Chi Minh City</p>
             </div>
 
@@ -294,10 +303,13 @@
             <div class="footer-right">
                 <p>FOLLOW US:</p>
                 <div class="social-icons">
-                    <a href="#" class="icon fb"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="icon ig"><i class="fab fa-instagram-square"></i></a>
-                    <a href="#" class="icon tw"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="icon yt"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="icon fb"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="icon ig"><i
+                            class="fab fa-instagram-square"></i></a>
+                    <a href="https://x.com" target="_blank" class="icon tw"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" class="icon yt"><i
+                            class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -314,9 +326,12 @@
             });
         });
     </script>
-
     <!-- script gallery-->
     <script src="js/gallery.js"></script>
+    <!-- script scrolling-->
+    <script src="js/scrolling.js"></script>
+    <!-- script notification contact -->
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
