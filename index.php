@@ -39,7 +39,7 @@
         <div class="overlay-content">
             <h1>Welcome to Our Hotel</h1>
             <p>Experience the perfect blend of luxury and comfort during your stay.</p>
-            <button class="book-btn">Book Room</button>
+            <button class="book-btn" onclick="window.location.href='/tdhotel/booking/booking.php'">Book Room</button>
         </div>
     </div>
 
@@ -130,7 +130,8 @@
     <section class="welcome-section">
         <div class="content">
             <h1>Welcome!</h1>
-            <p>This is the place I call my passion, where I dedicate my heart and soul to creating memorable
+            <p>I'm Mr. Dat. This is the place I call my passion, where I dedicate my heart and soul to creating
+                memorable
                 experiences, and I hope you will call it home, a place that is modern, comfortable, and filled with
                 luxury.</p>
             <div class="buttons">
@@ -149,7 +150,7 @@
     <!-- Book rooms -->
     <section id="hotel-rooms" class="hotel-rooms">
         <h1 class="section-title">Available Rooms</h1>
-        <div class="rooms-container">
+        <div class="rooms-container" onclick="window.location.href='/tdhotel/booking/booking.php'">
             <!-- Room 1 -->
             <div class="room">
                 <img src="images/room1.jpg" alt="Room 1" class="room-image">
@@ -157,7 +158,7 @@
                     <h2 class="room-title">Deluxe Room</h2>
                     <p class="room-description">A luxurious room with a king-size bed, ensuite bathroom, and stunning
                         city views.</p>
-                    <p class="room-price">$150 per night</p>
+                    <p class="room-price">$450 per night</p>
                 </div>
             </div>
             <!-- Room 2 -->
@@ -166,26 +167,26 @@
                 <div class="room-details">
                     <h2 class="room-title">Standard Room</h2>
                     <p class="room-description">Comfortable room with a queen-size bed and modern amenities.</p>
-                    <p class="room-price">$100 per night</p>
+                    <p class="room-price">$180 per night</p>
                 </div>
             </div>
             <!-- Room 3 -->
             <div class="room">
                 <img src="images/room4.jpg" alt="Room 3" class="room-image">
                 <div class="room-details">
-                    <h2 class="room-title">Family Room</h2>
-                    <p class="room-description">Spacious room with two queen-size beds, perfect for families.</p>
-                    <p class="room-price">$200 per night</p>
+                    <h2 class="room-title">Suite</h2>
+                    <p class="room-description">A premium suite with a living area, kitchenette, and exclusive services.
+                    </p>
+                    <p class="room-price">$300 per night</p>
                 </div>
             </div>
             <!-- Room 4 -->
             <div class="room">
                 <img src="images/room3.jpg" alt="Room 4" class="room-image">
                 <div class="room-details">
-                    <h2 class="room-title">Suite</h2>
-                    <p class="room-description">A premium suite with a living area, kitchenette, and exclusive services.
-                    </p>
-                    <p class="room-price">$300 per night</p>
+                    <h2 class="room-title">Family Room</h2>
+                    <p class="room-description">Spacious room with two queen-size beds, perfect for families.</p>
+                    <p class="room-price">$200 per night</p>
                 </div>
             </div>
         </div>
@@ -198,23 +199,23 @@
             <p>If you need further assistance, please leave a message, we will respond to you immediately.</p>
             <form id="contactForm" method="POST" action="handle/contact.php" onsubmit="return showConfirmation(event)">
                 <div class="form-group">
-                    <label for="name">Name:</label>
+                    <label for="name">Name*</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email">Email*</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone:</label>
+                    <label for="phone">Phone*</label>
                     <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
                 </div>
 
                 <div class="form-group-message">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea>
                 </div>
             </form>
         </div>
@@ -277,9 +278,6 @@
             </div>
         </div>
     </section>
-
-    <main>
-    </main>
 
     <!-- Footer-->
     <footer class="footer">

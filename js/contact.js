@@ -1,3 +1,4 @@
+//form này chỉ dùng để xử lý thông báo khi người dùng ấn send message
 function showConfirmation(event) {
     event.preventDefault(); // Ngừng hành động gửi form mặc định
 
