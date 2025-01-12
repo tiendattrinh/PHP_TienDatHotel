@@ -1,5 +1,5 @@
 <?php
-include '../database.php';
+include '../../../database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO contact (name, email, phone, message) VALUE ('$name', '$email', '$phone', '$message')";
 
     if (mysqli_query($con, $sql)) {
-        header("Location: ../index.php");
+        header("Location: ../../../index.php");
         exit();
     } else {
         echo "Error data" . mysqli_error($con);

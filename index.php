@@ -39,7 +39,8 @@
         <div class="overlay-content">
             <h1>Welcome to Our Hotel</h1>
             <p>Experience the perfect blend of luxury and comfort during your stay.</p>
-            <button class="book-btn" onclick="window.location.href='/tdhotel/booking/booking.php'">Book Room</button>
+            <button class="book-btn" onclick="window.location.href='/tdhotel/src/user/booking/booking.php'">Book
+                Room</button>
         </div>
     </div>
 
@@ -150,7 +151,7 @@
     <!-- Book rooms -->
     <section id="hotel-rooms" class="hotel-rooms">
         <h1 class="section-title">Available Rooms</h1>
-        <div class="rooms-container" onclick="window.location.href='/tdhotel/booking/booking.php'">
+        <div class="rooms-container" onclick="window.location.href='/tdhotel/src/user/booking/booking.php'">
             <!-- Room 1 -->
             <div class="room">
                 <img src="images/room1.jpg" alt="Room 1" class="room-image">
@@ -197,7 +198,8 @@
         <div class="contact-form">
             <h2>Contact Us</h2>
             <p>If you need further assistance, please leave a message, we will respond to you immediately.</p>
-            <form id="contactForm" method="POST" action="handle/contact.php" onsubmit="return showConfirmation(event)">
+            <form id="contactForm" method="POST" action="src/user/handle/contact.php"
+                onsubmit="return showConfirmation(event)">
                 <div class="form-group">
                     <label for="name">Name*</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
