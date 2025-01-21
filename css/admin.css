@@ -1,0 +1,772 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f5f5f5;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 18%;
+    margin-top: 5px;
+    background-color: #494949;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #7e57c2;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: left 0.3s ease;
+    z-index: 10;
+}
+
+/* Sidebar vẫn hiển thị bình thường trên desktop */
+@media (min-width: 768px) {
+    .sidebar {
+        position: static;
+        width: 250px;
+        height: auto;
+    }
+
+    .sidebar .close-btn {
+        display: none;
+    }
+
+    /* Dấu 3 gạch không hiển thị trên desktop */
+    .menu-toggle {
+        display: none;
+    }
+
+}
+
+/* Hiển thị sidebar khi được mở trên mobile */
+.sidebar.open {
+    left: 0;
+}
+
+/* Nút đóng trong sidebar */
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sidebar .close-btn {
+    display: none;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+
+@media (max-width: 1024px) {
+
+    /* Ẩn sidebar mặc định trên mobile */
+    .sidebar {
+        left: -250px;
+    }
+
+    .sidebar .close-btn {
+        display: flex;
+    }
+
+    /* Hiển thị dấu 3 gạch ngang */
+    .menu-toggle {
+        display: flex;
+    }
+
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu-item {
+    padding: 10px 0;
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    /* Căn chỉnh icon và text cùng hàng */
+    align-items: center;
+    /* Căn giữa icon và text theo chiều dọc */
+    padding: 8px 12px;
+    /* Tăng khoảng cách vùng click */
+    border-radius: 5px;
+    /* Làm mềm góc cạnh khi hover */
+    transition: background-color 0.3s, color 0.3s;
+    /* Hiệu ứng hover mượt mà */
+}
+
+.menu-item a i {
+    min-width: 15px;
+    /* Đảm bảo khoảng cách icon và text đồng đều */
+    text-align: center;
+    margin-right: 10px;
+}
+
+.menu-title {
+    font-size: 16px;
+    color: #b2a1d9;
+    margin: 10px 0;
+}
+
+/* Hover effect */
+.menu-item a:hover {
+    background-color: #696CFF;
+    /* Màu nền khi hover (tối hơn màu gốc) */
+
+    /* Màu chữ khi hover */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.main-content .header .header-detail {
+    display: flex;
+    align-items: center;
+    display: flex;
+    /* Kích hoạt Flexbox */
+    justify-content: flex-end;
+    /* Đẩy các phần tử sang bên phải */
+    align-items: center;
+    /* Căn giữa theo trục dọc */
+    gap: 30px;
+    /* Khoảng cách giữa các icon */
+    list-style-type: none;
+    /* Loại bỏ dấu chấm trong li */
+}
+
+.header-detail i {
+    font-size: 25px;
+    list-style-type: none;
+    color: rgb(67, 67, 67);
+}
+
+.header-detail i:hover {
+    color: #696CFF;
+    transform: scale(1.2);
+}
+
+.intro {
+    display: flex;
+    margin-bottom: 20px;
+    /* Kích hoạt Flexbox */
+    justify-content: space-between;
+    /* Tạo khoảng cách giữa các phần */
+    gap: 25px;
+}
+
+.intro-detail {
+    flex: 7;
+
+    display: flex;
+    /* Sử dụng flexbox để căn chỉnh các phần tử con */
+    justify-content: center;
+    /* Căn giữa các phần tử con theo chiều ngang */
+    align-items: center;
+    /* Căn giữa các phần tử con theo chiều dọc */
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng */
+    background: white;
+    border-radius: 10px;
+}
+
+.info-detail {
+    flex: 0 0 60%;
+    /* Phần này chiếm 60% chiều rộng */
+    padding: 20px;
+}
+
+.img-intro {
+    flex: 0 0 40%;
+    /* Phần này chiếm 40% chiều rộng */
+    padding: 30px 80px 0 0;
+    display: flex;
+    justify-content: center;
+    /* Căn giữa hình ảnh theo chiều ngang */
+    align-items: center;
+    /* Căn giữa hình ảnh theo chiều dọc */
+}
+
+.img-intro img {
+    max-width: 100%;
+    /* Đảm bảo hình ảnh không vượt quá chiều rộng của container */
+    height: auto;
+    /* Đảm bảo tỷ lệ hình ảnh được giữ nguyên */
+}
+
+.welcome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #696CFF;
+}
+
+.info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.view-badges {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #7e57c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-badges:hover {
+    background-color: #696CFF;
+}
+
+.stats {
+    flex: 3;
+    /* Chiếm 3 phần (30%) */
+    display: grid;
+    /* Sử dụng Grid layout */
+    grid-template-columns: 1fr 1fr;
+    /* Chia thành 2 cột đều nhau */
+    gap: 30px;
+}
+
+.stat-box {
+    display: flex;
+    /* Kích hoạt Flexbox cho nội dung */
+    flex-direction: column;
+    /* Sắp xếp theo cột */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều dọc */
+    align-items: center;
+    /* Căn giữa nội dung theo chiều ngang */
+    padding: 10px;
+    font-size: 13px;
+    color: #888;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-box i {
+    font-size: 25px;
+}
+
+.stat-box span {
+    font-size: 18px;
+    padding-top: 5px;
+    color: #3d3d3d;
+    font-weight: 700;
+}
+
+.color-r i {
+    color: #696CFF;
+}
+
+.color-c i {
+    color: #696CFF;
+}
+
+.orders {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 300px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.orders-header h2 {
+    color: #616161;
+    font-size: 20px;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table th {
+    color: #616161;
+    font-size: 13px;
+}
+
+.orders-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 99%;
+    max-width: 135px;
+    /* Giới hạn chiều rộng mỗi ô */
+    white-space: nowrap;
+    /* Không xuống dòng */
+    overflow: hidden;
+    overflow-x: auto;
+    /* Cho phép cuộn ngang bên trong ô */
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 1%;
+    /* Cột 1 chiếm 30% */
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 20%;
+    /* Cột 2 chiếm 30% */
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 60%;
+    /* Cột 3 chiếm 30% */
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    width: 1%;
+    /* Cột 5 chiếm 30% */
+}
+
+
+.orders-table td i {
+    color: rgb(11, 120, 170);
+    font-size: 15px;
+}
+
+.orders-table td i:hover {
+    color: #696CFF;
+    transform: scale(1.2);
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.todo-list {
+    flex: 4;
+    padding: 15px;
+    background-color: white;
+    margin-right: 15px;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 300px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.todo-list h3 {
+    display: flex;
+    color: #616161;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.todo-list h3 i {
+    color: #7e57c2;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.todo-list h3 i:hover {
+    color: #696CFF;
+    transform: scale(1.2);
+}
+
+/* Style cho danh sách */
+.todo-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.todo-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Gạch ngang khi checkbox được chọn */
+.todo-list input[type="checkbox"]:checked+span,
+.todo-list input[type="checkbox"]:checked+span+.time {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-list .time {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+    margin-left: 25px;
+}
+
+/* Style cho icon thùng rác */
+
+.todo-list .time i {
+    margin-left: 5px;
+    font-size: 9px;
+    padding-top: 1px;
+    color: #888;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.todo-list .time i:hover {
+    transform: scale(1.2);
+    color: #555;
+}
+
+.send-message {
+    flex: 6;
+    max-height: 300px;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.orders-header h2 {
+    margin: 0;
+}
+
+.filter {
+    padding: 5px 13px;
+    background-color: rgb(235, 235, 235);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter:hover {
+    background-color: #bdbdbd;
+}
+
+.orders-table {
+    width: fit-content;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.orders-table th,
+.orders-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.orders-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.orders-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.orders-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.orders-table td i {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.orders-table td i:hover {
+    color: #007bff;
+}
+
+
+/* = CSS responsive cho mobile = */
+@media (max-width: 1024px) {
+
+    /* Sidebar */
+    .sidebar {
+        width: 200px;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: -200px;
+        height: 100%;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu-item {
+        padding: 8px 0;
+    }
+
+    .menu-item a {
+        font-size: 14px;
+    }
+
+    /* Tạo hiệu ứng cho menu khi mở */
+    .menu-item a i {
+        font-size: 18px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    /* Intro section: Canh giữa các phần */
+    .intro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-detail {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-intro {
+        padding: 20px 0;
+    }
+
+    .img-intro img {
+        max-width: 80%;
+    }
+
+    .info-detail {
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Stats: Sắp xếp lại các phần tử */
+    .stats {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .stat-box {
+        display: flex;
+        width: 80%;
+        /* Kích hoạt Flexbox trong từng thẻ con (nếu cần nội dung giữa thẻ) */
+        align-items: center;
+        /* Căn giữa nội dung theo trục dọc */
+        justify-content: center;
+        /* Căn giữa nội dung theo trục ngang */
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .stat-box i {
+        font-size: 20px;
+    }
+
+    .stat-box span {
+        font-size: 16px;
+    }
+
+    /* Orders Section */
+    .orders-header h2 {
+        font-size: 18px;
+    }
+
+    .orders-table td {
+        white-space: nowrap;
+        /* Không xuống dòng */
+        overflow: hidden;
+        overflow-x: auto;
+        /* Cho phép cuộn ngang bên trong ô */
+    }
+
+    .footer {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-list {
+        width: 90%;
+    }
+
+    .todo-list ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .todo-list li {
+        display: flex;
+        align-items: center;
+        /* Căn giữa theo chiều dọc */
+        justify-content: space-between;
+        /* Đẩy các phần tử ra hai phía */
+        margin-bottom: 10px;
+    }
+
+    .todo-list li input[type="checkbox"] {
+        margin-right: 10px;
+        /* Tạo khoảng cách giữa checkbox và text */
+    }
+
+    .todo-list span {
+        flex: 2;
+
+        /* Để các span đầu tiên giãn đều */
+        text-align: left;
+
+        /* Canh trái cho nội dung */
+    }
+
+    .todo-list span.time {
+        flex: 0.5;
+        /* Đảm bảo span.time không giãn */
+        /* Đẩy span.time sang bên phải */
+        text-align: right;
+        /* Canh phải nội dung */
+        color: gray;
+        font-size: 0.9em;
+    }
+
+    .send-message {
+        flex: 1;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    /* Table: Cải thiện độ rộng cho mobile */
+    .orders-table th,
+    .orders-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    /* Todo list */
+    .todo-list h3 {
+        font-size: 16px;
+    }
+
+    .todo-list li {
+        font-size: 12px;
+    }
+
+    .todo-list .time {
+        font-size: 10px;
+    }
+
+    .orders-table td i {
+        font-size: 18px;
+    }
+}
+
+/* = CSS cho biểu tượng menu 3 gạch khi mở = */
+@media (max-width: 1024px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        /* Đẩy các phần tử con ra hai bên */
+        align-items: center;
+        /* Căn giữa theo chiều dọc (nếu cần) */
+    }
+
+    .header-detail li {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+/* CSS cho menu toggle */
+.menu-toggle.active {
+    display: block;
+}
