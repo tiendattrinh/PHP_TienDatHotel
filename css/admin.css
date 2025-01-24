@@ -246,14 +246,14 @@ body {
 }
 
 .welcome {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #696CFF;
 }
 
 .info {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 18px;
     color: #888;
 }
 
@@ -263,6 +263,7 @@ body {
     background-color: #7e57c2;
     color: white;
     border: none;
+    font-size: 17px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -322,9 +323,8 @@ body {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    max-width: 100%;
+    width: 100%;
     max-height: 300px;
-    overflow-x: auto;
     overflow-y: auto;
 }
 
@@ -341,12 +341,12 @@ body {
 
 .orders-table {
     width: 100%;
-    border-collapse: collapse;
+
 }
 
 .orders-table th {
     color: #616161;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .orders-table td {
@@ -358,34 +358,54 @@ body {
     white-space: nowrap;
     /* Không xuống dòng */
     overflow: hidden;
-    overflow-x: auto;
-    /* Cho phép cuộn ngang bên trong ô */
 }
 
 th:nth-child(1),
 td:nth-child(1) {
-    width: 1%;
+    width: 6%;
     /* Cột 1 chiếm 30% */
 }
 
 th:nth-child(2),
 td:nth-child(2) {
-    width: 20%;
+    width: 12%;
     /* Cột 2 chiếm 30% */
 }
 
 th:nth-child(3),
 td:nth-child(3) {
-    width: 60%;
-    /* Cột 3 chiếm 30% */
+    width: 22%;
+    overflow: hidden;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 14%;
 }
 
 th:nth-child(5),
 td:nth-child(5) {
-    width: 1%;
-    /* Cột 5 chiếm 30% */
+    width: 6%;
 }
 
+th:nth-child(6),
+td:nth-child(6) {
+    width: 10%;
+}
+
+th:nth-child(7),
+td:nth-child(7) {
+    width: 10%;
+}
+
+th:nth-child(8) {
+    width: 20%;
+}
+
+td:nth-child(8) {
+    width: 20%;
+    color: #696CFF;
+}
 
 .orders-table td i {
     color: rgb(11, 120, 170);
@@ -397,6 +417,205 @@ td:nth-child(5) {
     transform: scale(1.2);
 }
 
+/* modal chi tiết thông tin booking */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 60%;
+    max-width: 600px;
+    overflow-y: auto;
+    max-height: 80%;
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.modal-table th,
+.modal-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-table th {
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.modal-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.close-btn-booking {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+}
+
+.close-btn-booking:hover {
+    color: #000;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* hết modal chi tiết thông tin booking */
+
+/* modal sửa trạng thái */
+.modalstt {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contentstt {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-contentstt h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Select */
+#statusSelect {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Select ct */
+#statusSelect-ct {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Nút Save và Cancel */
+#saveStatusBtn,
+#closeModalstt {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#saveStatusBtn {
+    background-color: #7e57c2;
+    color: white;
+}
+
+#closeModalstt {
+    background-color: #dc3545;
+    color: white;
+}
+
+#saveStatusBtn:hover {
+    background-color: #696CFF;
+}
+
+#closeModalstt:hover {
+    background-color: #b40617;
+}
+
+/* hết modal sửa trạng thái */
+/* Nút Save và Cancel contact */
+#saveStatusBtn-ct,
+#closeModal-ct {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#saveStatusBtn-ct {
+    background-color: #7e57c2;
+    color: white;
+}
+
+#closeModal-ct {
+    background-color: #dc3545;
+    color: white;
+}
+
+#saveStatusBtn-ct:hover {
+    background-color: #696CFF;
+}
+
+#closeModal-ct:hover {
+    background-color: #b40617;
+}
+
+/* hết modal sửa trạng thái contact*/
+
 footer {
     display: flex;
     width: 100%;
@@ -404,8 +623,9 @@ footer {
 }
 
 .todo-list {
-    flex: 4;
+    flex: 3;
     padding: 15px;
+    padding-top: 24px;
     background-color: white;
     margin-right: 15px;
     border-radius: 5px;
@@ -481,17 +701,77 @@ footer {
     color: #555;
 }
 
+/* modal add note */
+.modal_add_note {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-add-note {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-content-add-note h3 {
+    margin-bottom: 20px;
+}
+
+.modal-content-add-note input {
+    width: calc(100% - 20px);
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-content-add-note button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.modal-content-add-note #addNoteBtn {
+    background: #6f3bc7;
+    color: #fff;
+}
+
+.modal-content-add-note #closeModal_addNote {
+    background: #dc3545;
+    color: white;
+}
+
+.modal-content-add-note #addNoteBtn:hover {
+    background: #696CFF;
+}
+
+.modal-content-add-note #closeModal_addNote:hover {
+    background: #b40617;
+}
+
+/* hết modal add note*/
+
 .send-message {
-    flex: 6;
+    flex: 7;
     max-height: 300px;
-    overflow-x: auto;
+    max-width: 100%;
     overflow-y: auto;
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
 }
-
-
 
 .orders-header {
     display: flex;
@@ -501,8 +781,127 @@ footer {
 }
 
 .orders-header h2 {
-    margin: 0;
+    padding: 10px;
+    color: #6f3bc7;
+    font-size: 25px;
+
 }
+
+/* contact table */
+#orders-table-container {
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng container */
+    overflow-x: hidden;
+    /* Không cho cuộn ngang */
+    border-radius: 5px;
+    /* Góc bo tròn */
+    padding: 5px;
+}
+
+.orders-table-contact {
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng container */
+    border-collapse: collapse;
+    /* Gộp viền bảng */
+    table-layout: fixed;
+    /* Kích thước các cột cố định */
+}
+
+.orders-table-contact th,
+.orders-table-contact td {
+    border: 1px solid #ddd;
+    /* Viền giữa các ô */
+    text-align: center;
+    /* Căn giữa nội dung */
+    padding: 10px;
+    font-size: 15px;
+    overflow: hidden;
+    /* Ẩn nội dung tràn */
+}
+
+.orders-table-contact th {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+.orders-table-contact tbody tr:hover {
+    background-color: #f1f1f1;
+    /* Hiệu ứng hover trên hàng */
+}
+
+.orders-table-contact i {
+    margin: 0 5px;
+    cursor: pointer;
+    color: #555;
+}
+
+.orders-table-contact i:hover {
+    color: #007bff;
+    /* Màu khi hover icon */
+}
+
+.orders-table-contact th:nth-child(1),
+.orders-table-contact td:nth-child(1) {
+    width: 8%;
+    /* Cột Id */
+}
+
+.orders-table-contact th:nth-child(2),
+.orders-table-contact td:nth-child(2) {
+    width: 9%;
+    /* Cột Name */
+}
+
+.orders-table-contact th:nth-child(3),
+.orders-table-contact td:nth-child(3) {
+    width: 15%;
+    overflow-x: auto;
+    /* Cột Email */
+}
+
+.orders-table-contact th:nth-child(4),
+.orders-table-contact td:nth-child(4) {
+    width: 15%;
+    /* Cột Phone */
+}
+
+.orders-table-contact th:nth-child(5),
+.orders-table-contact td:nth-child(5) {
+    width: 25%;
+    /* Cột Message */
+}
+
+.orders-table-contact th:nth-child(6),
+.orders-table-contact td:nth-child(6) {
+    width: 15%;
+    /* Cột Request Date */
+}
+
+.orders-table-contact th:nth-child(7) {
+    width: 10%;
+}
+
+.orders-table-contact td:nth-child(7) {
+    width: 10%;
+    color: #696CFF;
+    /* Cột Status */
+}
+
+.orders-table-contact th:nth-child(8),
+.orders-table-contact td:nth-child(8) {
+    width: 7%;
+    /* Cột ACTIONS */
+}
+
+/* end contact table */
+
+.filter-search {
+    width: 20%;
+    padding: 8px 10px 8px;
+    border: 1px solid #858585;
+    border-radius: 6px;
+}
+
 
 .filter {
     padding: 5px 13px;
@@ -518,15 +917,18 @@ footer {
 }
 
 .orders-table {
-    width: fit-content;
+    width: 100%;
     border-collapse: collapse;
+
+    /* Các cột có kích thước cố định */
+    max-height: 300px;
     text-align: left;
 }
 
 .orders-table th,
 .orders-table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 15px;
 }
 
 .orders-table th {
@@ -652,15 +1054,14 @@ footer {
 
     /* Orders Section */
     .orders-header h2 {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .orders-table td {
         white-space: nowrap;
         /* Không xuống dòng */
         overflow: hidden;
-        overflow-x: auto;
-        /* Cho phép cuộn ngang bên trong ô */
+
     }
 
     .footer {
@@ -672,6 +1073,7 @@ footer {
 
     .todo-list {
         width: 90%;
+        padding-top: 18px;
     }
 
     .todo-list ul {

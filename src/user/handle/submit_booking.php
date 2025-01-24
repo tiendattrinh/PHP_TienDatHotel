@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $guests = (int) $_POST['guests'];
     $meal = mysqli_real_escape_string($con, $_POST['meal']);
     $total = (float) $_POST['total'];
-    $status = 'Pending Confirmation';
-    $note = ''; // Bạn có thể thêm note nếu cần
+    $status = 'Pending';
+    $note = '';
 
     // Tính số ngày ở
     $arrival_date = new DateTime($arrival);
