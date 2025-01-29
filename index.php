@@ -23,6 +23,8 @@
                         <li><a href="#gallery-section">GALLERY</a></li>
                         <li><a href="#hotel-rooms">ROOMS</a></li>
                         <li><a href="#contact-us">CONTACT US</a></li>
+                        <li><a href="../src/admin/a_sidebar/login.php"><i class="fas fa-user-shield"> Admin</i></a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="menu-toggle">
@@ -39,7 +41,7 @@
         <div class="overlay-content">
             <h1>Welcome to Our Hotel</h1>
             <p>Experience the perfect blend of luxury and comfort during your stay.</p>
-            <button class="book-btn" onclick="window.location.href='/tdhotel/src/user/booking/booking.php'">Book
+            <button class="book-btn" onclick="window.location.href='/src/user/booking/booking.php'">Book
                 Room</button>
         </div>
     </div>

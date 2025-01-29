@@ -9,6 +9,29 @@
     <link rel="stylesheet" href="../../css/admin.css?v=<?php echo time(); ?>">
 
     <?php
+    session_start();
+
+    // Kiểm tra session timeout
+    if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
+        // Nếu quá 30 phút không hoạt động, hủy session và chuyển hướng
+        session_unset();
+        session_destroy();
+        header("Location: a_sidebar/login.php");
+        exit;
+    }
+
+    // Cập nhật thời gian hoạt động cuối cùng
+    $_SESSION['last_activity'] = time();
+
+    // Kiểm tra người dùng đã đăng nhập chưa
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'admin') {
+        // Nếu chưa đăng nhập hoặc không phải admin, chuyển hướng về login
+        header("Location: a_sidebar/login.php");
+        exit;
+    }
+    ?>
+
+    <?php
     include '../../database.php';
     ?>
 </head>
@@ -18,13 +41,17 @@
         <div class="logo">TD Hotel</div>
         <button class="close-btn"><i class="fa-regular fa-circle-xmark"></i></button>
         <ul class="menu">
-            <li class="menu-item active"><a href="admin.php/"><i class="fas fa-home"></i> Dashboard</a></li>
-            <li class="menu-item"><a href="#"><i class="fa-regular fa-credit-card"></i> Payment</a></li>
+            <li class="menu-item active"><a href="admin.php"><i class="fas fa-home"></i> Dashboard</a></li>
+            <!-- <li class="menu-item"><a href="#"><i class="fa-regular fa-credit-card"></i> Payment</a></li> -->
+            <!-- in hóa đơn trạng thái thành công -->
             <p class="menu-title">Account Settings</p>
-            <li class="menu-item"><a href="#"><i class="fas fa-sign-in-alt"></i> Log out</a></li>
-            <li class="menu-item"><a href="#"><i class="fas fa-user-plus"></i> Register</a></li>
-            <li class="menu-item"><a href="#"><i class="fa-solid fa-user-lock"></i> Forgot Password</a></li>
-            <li class="menu-item"><a href="#"><i class="fa-solid fa-unlock-keyhole"></i> Reset Password</a></li>
+            <li class="menu-item"><a href="a_sidebar/login.php"><i class="fas fa-sign-in-alt"></i> Log out</a></li>
+            <li class="menu-item"><a href="a_sidebar/register.php"><i class="fas fa-user-plus"></i> Register</a></li>
+            <li class="menu-item"><a href="a_sidebar/forgotpass.php"><i class="fa-solid fa-user-lock"></i> Forgot
+                    Password</a>
+            </li>
+            <li class="menu-item"><a href="a_sidebar/resetpass.php"><i class="fa-solid fa-unlock-keyhole"></i> Reset
+                    Password</a></li>
         </ul>
     </div>
 
@@ -36,7 +63,8 @@
                 <span></span>
             </div>
             <div class="header-detail">
-                <li><a href="#"><i class="fas fa-moon"></i></a></li>
+                <!-- <li><a href="#"><i class="fas fa-moon"></i></a></li> -->
+                <li><a href="#"><i class="fas fa-sun"></i></a></li>
                 <li><a href="#"><i class="fas fa-bell"></i></a></li>
                 <li><a href="#"><i class="fas fa-user-circle"></i></a></li>
             </div>

@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    display: flex;
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.login-container .left {
+    flex: 1;
+    background: url('../images/login.jpg') no-repeat center center/cover;
+}
+
+.login-container .left-re {
+    /*đăng ký */
+    flex: 1;
+    background: url('../images/signin.jpg') no-repeat center center/cover;
+}
+
+.login-container .right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.right p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.right p a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.right p a:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group .toggle-password {
+    margin-top: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.form-group .toggle-password:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.forgot-password a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .login-container .left {
+        height: 200px;
+        flex: none;
+        /* Đảm bảo ảnh không bị nén */
+        background-size: cover;
+        /* Ảnh luôn hiển thị đầy đủ */
+    }
+
+    .login-container .left-re {
+        height: 200px;
+        flex: none;
+        /* Đảm bảo ảnh không bị nén */
+        background-size: cover;
+        /* Ảnh luôn hiển thị đầy đủ */
+    }
+
+    .login-container .right {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .right h2 {
+        font-size: 24px;
+    }
+
+    .btn-login {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .forgot-password {
+        font-size: 12px;
+    }
+}
+
+
+/* ============================== Forgot password ===============================*/
+.forgot-container {
+    display: flex;
+    width: 700px;
+    height: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.forgot-container .left-forgot {
+    flex: 1;
+    background: url('../images/forgotpassword.jpg') no-repeat center center/cover;
+}
+
+.forgot-container .right-forgot {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-forgot h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.right-forgot p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.right-forgot p a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.right-forgot p a:hover {
+    text-decoration: underline;
+}
+
+.form-group-forgot {
+    margin-bottom: 15px;
+}
+
+.form-group-forgot label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group-forgot input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-forgot {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-forgot:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .forgot-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .forgot-container .left-forgot {
+        height: 200px;
+        flex: none;
+        /* Đảm bảo ảnh không bị nén */
+        background-size: cover;
+        /* Ảnh luôn hiển thị đầy đủ */
+    }
+
+    .forgot-container .right-forgot {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .right-forgot h2 {
+        font-size: 24px;
+    }
+
+    .btn-forgot {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* =========================== reset password ===================================== */
+.reset-container {
+    background-color: #fff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.reset-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.reset-container p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group-rs {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group-rs label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-wrapper i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-reset {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-reset:hover {
+    background-color: #0056b3;
+}
+
+.footer-rs {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer-rs a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.footer-rs a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .reset-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .reset-container h2 {
+        font-size: 20px;
+    }
+
+    .reset-container p {
+        font-size: 12px;
+    }
+
+    .btn-reset {
+        font-size: 14px;
+    }
+}
